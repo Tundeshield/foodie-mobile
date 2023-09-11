@@ -5,19 +5,19 @@ import { Restaurant } from "../../../assets/types/restaurant";
 import { DishListItem } from "../../components/DishListItem";
 import { styles } from "./styles";
 
-export const Header = ({ restaurant }) => {
+export const Header = ({ image, name , deliveryFee ,minDeliveryTime, maxDeliveryTime }: Restaurant) => {
   return (
     <View>
-      <Image source={{ uri: restaurant.image }} style={styles.image} />
+      <Image source={{ uri: image }} style={styles.image} />
       <View style={styles.container}>
-        <Text style={styles.title}>{restaurant.name}</Text>
+        <Text style={styles.title}>{name}</Text>
         <Text style={styles.subTitle}>
           {"£" +
-            restaurant.deliveryFee +
+            deliveryFee +
             "  " +
-            restaurant.minDeliveryTime +
+            minDeliveryTime +
             " - " +
-            restaurant.maxDeliveryTime +
+            maxDeliveryTime +
             " min "}
         </Text>
       </View>
